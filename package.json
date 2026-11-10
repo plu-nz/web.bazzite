@@ -1,0 +1,23 @@
+{
+  "name": "web.bazzite",
+  "private": true,
+  "version": "0.1.0",
+  "type": "module",
+  "packageManager": "pnpm@12.16.1",
+  "scripts": {
+    "dev": "vite",
+    "check": "tsc --noEmit",
+    "build": "tsc --noEmit && vite build",
+    "deploy": "pnpm run build && wrangler deploy"
+  },
+  "dependencies": {
+    "@plunz/storybook": "github:plu-nz/lib.storybook#3449d90",
+    "solid-js": "^1.9.18"
+  },
+  "devDependencies": {
+    "typescript": "^5.9.3",
+    "vite": "^7.3.1",
+    "vite-plugin-solid": "^2.11.15",
+    "wrangler": "^4.149.0"
+  }
+}

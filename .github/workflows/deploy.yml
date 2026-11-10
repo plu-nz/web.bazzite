@@ -1,0 +1,18 @@
+name: Deploy
+
+on:
+  push:
+    branches: [main]
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+jobs:
+  deploy:
+    uses: plu-nz/ops.workflows/.github/workflows/cloudflare-worker.yml@faf3ecd588128859fa66c6de24364174bf6e574c
+    with:
+      account-id: d9843893c0daa49287456b9efb2cd021
+      healthcheck-url: https://bazzite.plu.nz/privacy
+    secrets:
+      cloudflare-api-token: ${{ secrets.CLOUDFLARE_API_TOKEN }}

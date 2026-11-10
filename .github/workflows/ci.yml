@@ -1,0 +1,15 @@
+name: CI
+
+on:
+  pull_request:
+  push:
+    branches: [main]
+
+permissions:
+  contents: read
+
+jobs:
+  quality:
+    uses: plu-nz/ops.workflows/.github/workflows/pnpm-ci.yml@faf3ecd588128859fa66c6de24364174bf6e574c
+    with:
+      verify-script: check
